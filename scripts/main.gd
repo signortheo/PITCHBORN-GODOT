@@ -75,7 +75,7 @@ func _build_world():
 	box(body,"LegR",Vector3(.15,-.48,0),Vector3(.17,.72,.19),Color(0.92,0.92,0.94))
 
 	var pivot=Node3D.new(); pivot.name="CameraPivot"; pivot.position=Vector3(0,1.2,0); player.add_child(pivot)
-	camera=Camera3D.new(); camera.position=Vector3(0,3.8,7.2); camera.rotation_degrees=Vector3(-15,180,0); camera.fov=68; camera.current=true; pivot.add_child(camera)
+	camera=Camera3D.new(); camera.position=Vector3(0,2.65,5.8); camera.fov=66; camera.current=true; pivot.add_child(camera)\n\tcamera.look_at_from_position(camera.position, Vector3(0,0.25,-2.2), Vector3.UP)
 
 	ball=RigidBody3D.new(); ball.name="Ball"; ball.position=start_ball; ball.mass=.43; ball.linear_damp=.22; ball.angular_damp=.18; add_child(ball)
 	var bc=CollisionShape3D.new(); var ss=SphereShape3D.new(); ss.radius=.22; bc.shape=ss; ball.add_child(bc)
